@@ -15,14 +15,28 @@ getBarronsCOT <- function() {
       url <- "http://www.barrons.com/public/page/9_0210-traderscommitments.html"
       barrons.table <- readHTMLTable(url, header = T, which = 1, stringsAsFactors = F)
       #View(barrons.table)
-      COT <- barrons.table[c(6, 27:30, 35:42), ]
+      BCOTS <- barrons.table[c(6, 27:30, 35:42), ]
       #minisp <- barrons.table[39:42, ]
       for (i in 2:5) {
-            COT[, i] <- type.convert(gsub("\\,", "", COT[, i]), na.strings = "NA", as.is = FALSE, dec = ".",
+            BCOTS[, i] <- type.convert(gsub("\\,", "", BCOTS[, i]), na.strings = "NA", as.is = FALSE, dec = ".",
                                      numerals = c("allow.loss", "warn.loss", "no.loss"))
       }
-      write.table(COT[, c(1:2, 4)], "mydata.csv", sep = ";")
-      print(paste("Barron's COT date: ", COT[1, 1]))
+      xcot <- getCOT()
+      saveRDS(xcot, file = "data/barronsCOT.Rdata")
+      if (file.exists("data/barronsCOT.Rdata")) {
+            barronsCOT <- readRDS("data/barronsCOT.Rdata")
+      } else {
+            barronsCOT <- data.frame(stringsAsFactors = FALSE)
+      }
+      gold <- as.data.frame(c(BCOTS[3, c(2, 4)], BCOTS[4, c(2, 4)], BCOTS[5, c(2, 4)], BCOTS[[3, 2]] + BCOTS[[4, 2]] + BCOTS[[5, 2]]))
+      sp <- as.data.frame(c(BCOTS[7, c(2, 4)], BCOTS[8, c(2, 4)], BCOTS[9, c(2, 4)], BCOTS[[7, 2]] + BCOTS[[8, 2]] + BCOTS[[9, 2]]))
+      spm <- as.data.frame(c(BCOTS[11, c(2, 4)], BCOTS[12, c(2, 4)], BCOTS[13, c(2, 4)], BCOTS[[11, 2]] + BCOTS[[12, 2]] + BCOTS[[13, 2]]))
+      weeklyCOT <- cbind(BCOTS[1, 1], BCOTS[1, 1], sp, spm, gold)
+      barronsCOT <- rbind(barronsCOT, setNames(weeklyCOT, names(barronsCOT)))
+      saveRDS(barronsCOT, file = "data/barronsCOT.Rdata")
+
+      write.table(BCOTS[, c(1:2, 4)], "mydata.csv", sep = ";")
+      print(paste("Barron's COT date: ", BCOTS[1, 1]))
       print("Data stored at mydata.csv")
-      COT
+      barronsCOT
 }

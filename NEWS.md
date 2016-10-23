@@ -8,6 +8,7 @@
 - Show several graphics representation
 
 ## TODO
+- retrieve complete table from Barron's
 - better analysis
 - improve graphics
 
