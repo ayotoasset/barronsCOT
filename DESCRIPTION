@@ -18,7 +18,7 @@ Imports:
 Suggests:
 Description: Get Barron's Commitments of Trader, store and analize it.
 License: GPL-3 | file LICENSE
-LazyData: NA
+LazyData: true
 URL:  https://github.com/mariope/barronsCOT
 BugReports: https://github.com/mariope/barronsCOT/issues
 RoxygenNote: 5.0.1

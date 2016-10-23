@@ -14,7 +14,7 @@
 #' @seealso \url{http://www.barrons.com/public/page/9_0210-traderscommitments.html}
 #' @export
 readCOT <- function(commtt = "all") {
-      COT <- readRDS("data/barronsCOT.Rdata")
+      COT <- load("data/COT.rda")
       COT[, 3:23] <- sapply(COT[, 3:23], as.numeric)
       COT[, 1][is.na(COT[, 1])] <- "-"
       COT <- na.omit(COT)

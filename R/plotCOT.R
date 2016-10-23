@@ -24,7 +24,7 @@
 #' plotCOT(readCOT("gold"))
 #' @seealso \url{http://www.barrons.com/public/page/9_0210-traderscommitments.html}
 #' @export
-# USAR: plotCOT(getCOT("sp"))
+# USE: plotCOT(getCOT("sp"))
 plotCOT <- function(cot) {
       ordenarOP <- function(cot) {
             coth <- data.frame()
