@@ -1,14 +1,27 @@
-#' Retrieve Barron's COT weekly data
+#' Plot Barron's COT data
 #'
-#' \code{readCMCreport} returns a data.frame with the operations one by one and
-#' to add useful information and statistics calculations.
+#' \code{plotCOT} returns a graphic with the trader's open position.
+#' The graphic show:
+#' - Total Open Position
+#' - Long and short open position filtered by:
+#' -- Large speculators
+#' -- Commercial Hedger
+#' -- Small Trader
+#' - Total position filtered by:
+#' -- Large speculators
+#' -- Commercial Hedger
+#' -- Small Trader
 #'
 #' @author Mario Pisa
 #' @param
-#' @return data.frame with Barron's COT table
+#' @return plot
 #' @examples
-#' \dontrun{getBarronsCOT()}
-#' barronsCOT <- getBarronsCOT()
+#' plotCOT(spcot)
+#' plotCOT(spmcot)
+#' plotCOT(goldcot)
+#' plotCOT(readCOT("sp"))
+#' plotCOT(readCOT("spmini"))
+#' plotCOT(readCOT("gold"))
 #' @seealso \url{http://www.barrons.com/public/page/9_0210-traderscommitments.html}
 #' @export
 # USAR: plotCOT(getCOT("sp"))

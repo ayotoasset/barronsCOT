@@ -1,7 +1,6 @@
 #' Retrieve Barron's COT weekly data
 #'
-#' \code{readCMCreport} returns a data.frame with the operations one by one and
-#' to add useful information and statistics calculations.
+#' \code{getBarronsCOT} returns a data.frame with the traders open position.
 #'
 #' @author Mario Pisa
 #' @param

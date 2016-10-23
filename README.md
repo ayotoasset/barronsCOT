@@ -33,6 +33,29 @@ This function hasn't parameters.
 ```
 > getBarronsCOT()
 ```
+### readCOT()
+
+Read COT data saved in Rdata file.
+This function has the next parameters:
+```
+> cot <- readCOT() # by default ALL COTs
+> spcot <- readCOT("sp")
+> spmcot <- readCOT("spmini")
+> goldcot <- readCOT("gold")
+```
+### plotCOT()
+
+Retrieve COT weekly data fron Barron's web page.
+This function hasn't parameters.
+
+```
+> plotCOT(spcot)
+> plotCOT(spmcot)
+> plotCOT(goldcot)
+> plotCOT(readCOT("sp"))
+> plotCOT(readCOT("spmini"))
+> plotCOT(readCOT("gold"))
+```
 
 ## Built With
 
