@@ -13,7 +13,7 @@ Depends:
    XML (>= 3.98),
    xlsx (>= 0.5.7),
    grid (>= 3.2.2),
-   ggplot2 (>= 1.0.1)
+   ggplot2 (>= 1.0.1),
 Imports:
 Suggests:
 Description: Get Barron's Commitments of Trader, store and analize it.
