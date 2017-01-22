@@ -33,28 +33,30 @@ plotCOT <- function(cot) {
       #       names(coth) <- c("id", "OP", "ind")
       #       coth
       # }
-      # cot$id <- seq.int(nrow(cot))
-      # cot$OPLS <- cot$largeSlong - cot$largeSshort
-      # cot$OPCH <- cot$commHlong - cot$commHshort
-      # cot$OPST <- cot$smallTlong - cot$smallTshort
-      # p1 <- ggplot(cot, aes(x = id)) + geom_line(aes(y = OPLS), colour = "blue") +
-      #       geom_line(aes(y = OPCH), colour = "red") + geom_line(aes(y = OPST), colour = "grey") + geom_hline(yintercept = 0, colour = "green") +
-      #       ylab(label = "Contratos") + xlab("Semanal") + labs(title = "Commitments of Traders - Open Position")  +
-      #       theme_bw() + theme(axis.text.x = element_text(angle = 90))
-      # p2 <- ggplot(cot, aes(x = id)) + geom_bar(stat = "identity", aes(y = openPosition)) + theme_bw() + theme(axis.text.x = element_text(angle = 90))
-      # p3 <- ggplot(cot, aes(x = id)) + geom_line(aes(y = openPosition), colour = "black") + theme_bw() + theme(axis.text.x = element_text(angle = 90))
-      # p7 <- ggplot(cot, aes(x = id)) + geom_line(aes(y = largeSlong), colour = "blue") + geom_line(aes(y = largeSshort), colour = "blue", linetype = "dotted") +
-      #       geom_line(aes(y = commHlong), colour = "red") + geom_line(aes(y = commHshort), colour = "red", linetype = "dotted") + geom_line(aes(y = smallTlong), colour = "grey") +
-      #       geom_line(aes(y = smallTshort), colour = "grey", linetype = "dotted") + theme_bw() + theme(axis.text.x = element_text(angle = 90))
-      # grid.newpage()
-      # pushViewport(viewport(layout = grid.layout(4, 2)))
-      # print(p1, vp = viewport(layout.pos.row = 4, layout.pos.col = 1:2))
-      # print(p2, vp = viewport(layout.pos.row = 1, layout.pos.col = 1:2))
-      # print(p3, vp = viewport(layout.pos.row = 2, layout.pos.col = 1:2))
-      # print(p7, vp = viewport(layout.pos.row = 3, layout.pos.col = 1:2))
+      cot$id <- seq.int(nrow(cot))
+      cot$OPLS <- cot$largeSlong - cot$largeSshort
+      cot$OPCH <- cot$commHlong - cot$commHshort
+      cot$OPST <- cot$smallTlong - cot$smallTshort
       # ordenarOP(cot)
-      barplot(cot$openPosition, names.arg = cot$date, border = TRUE, las = 1, main = "Barron\'s COT for S&P 500 E-mini")
+      par(mfrow = c(4, 1))
+      barplot(cot$openPosition, names.arg = cot$date, border = TRUE, las = 2)
       grid()
-      plot(cot$openPosition, type = "l", xlab = "historyCOTsp5m$date", ylab = cot$openPosition, main = "Open Position for S&P 500 E-mini")
+      plot(x = cot$openPosition, xlab = "", ylab = "", type = "l", las = 1)
       grid()
+      ylim <- range(cot$OPLS, cot$OPCH, cot$OPST)
+      plot(x = cot$OPLS, xlab = "", ylab = "", type = "l", las = 1, col = "blue", ylim = ylim)
+      lines(x = cot$OPCH, col = "red")
+      lines(x = cot$OPST, col = "grey")
+      abline(h = 0, col = "green")
+      grid()
+      ylim <- range(cot[, 2:7])
+      plot(x = cot$largeSlong, xlab = "", ylab = "", type = "l", las = 1, ylim = ylim, col = "blue")
+      lines(x = cot$largeSshort, col = "blue", lty = 2)
+      lines(x = cot$commHlong, col = "red")
+      lines(x = cot$commHshort, col = "red", lty = 2)
+      lines(x = cot$smallTlong, col = "grey")
+      lines(x = cot$smallTshort, col = "grey", lty = 2)
+      grid()
+      title("\n\nBarron\'s COT\nOpen Position", outer = TRUE)
+      par(mfrow = c(1, 1))
 }
