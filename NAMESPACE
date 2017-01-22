@@ -2,3 +2,4 @@
 
 export(getBarronsCOT)
 export(plotCOT)
+export(ggplotCOT)
