@@ -21,6 +21,15 @@ If you install from devtools you do not need to do anything else.
 > devtools::install_github("mariope/barronsCOT")
 ```
 
+#### Loading the library
+
+When you load the library, you obtain three data frmaes: **COTsp** for S&P 500 COT, 
+**COTspm** for S&P 500 (E-mini) COT and **COTgold** for Gold COT.
+
+```
+library(barronsCOT)
+```
+
 ## Running barronsCOT
 
 The function available are:
@@ -33,28 +42,17 @@ This function hasn't parameters.
 ```
 > getBarronsCOT()
 ```
-### readCOT()
+The output is a text saying if the data frames have been updated.
 
-Read COT data saved in Rdata file.
-This function has the next parameters:
-```
-> cot <- readCOT() # by default ALL COTs
-> spcot <- readCOT("sp")
-> spmcot <- readCOT("spmini")
-> goldcot <- readCOT("gold")
-```
 ### plotCOT()
 
-Retrieve COT weekly data fron Barron's web page.
-This function hasn't parameters.
+Show several graphics representation.
+This function need a COT data frame. Default COTsp.
 
 ```
-> plotCOT(spcot)
-> plotCOT(spmcot)
-> plotCOT(goldcot)
-> plotCOT(readCOT("sp"))
-> plotCOT(readCOT("spmini"))
-> plotCOT(readCOT("gold"))
+> plotCOT(COTsp)
+> plotCOT(COTspm)
+> plotCOT(COTgold)
 ```
 
 ## Built With

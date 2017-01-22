@@ -21,7 +21,7 @@
 #' plotCOT(barronsCOTgold)
 #' @seealso \url{http://www.barrons.com/public/page/9_0210-traderscommitments.html}
 #' @export
-plotCOT <- function(cot) {
+plotCOT <- function(cot = COTsp) {
       # ordenarOP <- function(cot) {
       #       coth <- data.frame()
       #       for (i in 1:nrow(cot)) {

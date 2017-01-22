@@ -10,9 +10,7 @@ Author: Mario Pisa Peña [aut, cre]
 Maintainer: Mario Pisa <mario.pisa@gmail.com>
 Depends:
    R (>= 3.2.2),
-   XML (>= 3.98),
-   grid (>= 3.2.2),
-   ggplot2 (>= 1.0.1)
+   XML (>= 3.98)
 Imports:
 Suggests:
 Description: Get Barron's Commitments of Trader, store and analize it.

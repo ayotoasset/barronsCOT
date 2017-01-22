@@ -4,7 +4,7 @@
 \alias{plotCOT}
 \title{Plot Barron's COT data}
 \usage{
-plotCOT(cot)
+plotCOT(cot = COTsp)
 }
 \value{
 plot
