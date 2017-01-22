@@ -1,7 +1,7 @@
 #' barronsCOT: A package to retrieve Barron's COT weekly data.
 #'
 #' The barronsCOT package provides three main functions:
-#' getBarronsCOT, getCOT and plotCOT
+#' getBarronsCOT and plotCOT
 #'
 #' @section barronsCOT functions:
 #' The foo functions...

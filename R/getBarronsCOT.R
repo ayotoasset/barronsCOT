@@ -7,7 +7,6 @@
 #' @return data.frame with Barron's COT table
 #' @examples
 #' \dontrun{getBarronsCOT()}
-#' barronsCOT <- getBarronsCOT()
 #' @seealso \url{http://www.barrons.com/public/page/9_0210-traderscommitments.html}
 #' @export
 getBarronsCOT <- function() {
@@ -20,16 +19,51 @@ getBarronsCOT <- function() {
             BCOTS[, i] <- type.convert(gsub("\\,", "", BCOTS[, i]), na.strings = "NA", as.is = FALSE, dec = ".",
                                      numerals = c("allow.loss", "warn.loss", "no.loss"))
       }
-      # COT <- load("data/COT.rda")
-      gold <- as.data.frame(c(BCOTS[3, c(2, 4)], BCOTS[4, c(2, 4)], BCOTS[5, c(2, 4)], BCOTS[[3, 2]] + BCOTS[[4, 2]] + BCOTS[[5, 2]]))
-      sp <- as.data.frame(c(BCOTS[7, c(2, 4)], BCOTS[8, c(2, 4)], BCOTS[9, c(2, 4)], BCOTS[[7, 2]] + BCOTS[[8, 2]] + BCOTS[[9, 2]]))
-      spm <- as.data.frame(c(BCOTS[11, c(2, 4)], BCOTS[12, c(2, 4)], BCOTS[13, c(2, 4)], BCOTS[[11, 2]] + BCOTS[[12, 2]] + BCOTS[[13, 2]]))
-      weeklyCOT <- cbind(BCOTS[1, 1], BCOTS[1, 1], sp, spm, gold)
-      COT <- rbind(COT, setNames(weeklyCOT, names(COT)))
-      # save(COT, file = "data/COT.rda")
+      insertCOT <- function(COT) {
+            calcOpenPosition <- function(COT) {
+                  openPosition <- COT[1, 2] + COT[1, 4] + COT[1, 6]
+                  openPosition
+            }
+            COTgold <- get("COTgold")
+            if (COT[1, 1] != COTgold[nrow(COTgold), 1]) {
+                  BCOTgold <- data.frame(date = COT[1, 1])
+                  BCOTgold$largeSlong <- COT[3, 2]
+                  BCOTgold$largeSshort <- COT[3, 4]
+                  BCOTgold$commHlong <- COT[4, 2]
+                  BCOTgold$commHshort <- COT[4, 4]
+                  BCOTgold$smallTlong <- COT[5, 2]
+                  BCOTgold$smallTshort <- COT[5, 4]
+                  BCOTgold$openPosition <- calcOpenPosition(BCOTgold)
+                  COTgold <<- rbind(COTgold, BCOTgold)
 
-      # write.table(BCOTS[, c(1:2, 4)], "mydata.csv", sep = ";")
-      print(paste("Barron's COT date: ", BCOTS[1, 1]))
-      # print("Data stored at mydata.csv")
-      COT
+                  COTsp <- get("COTsp")
+                  BCOTsp <- data.frame(date = COT[1, 1])
+                  BCOTsp$largeSlong <- COT[7, 2]
+                  BCOTsp$largeSshort <- COT[7, 4]
+                  BCOTsp$commHlong <- COT[8, 2]
+                  BCOTsp$commHshort <- COT[8, 4]
+                  BCOTsp$smallTlong <- COT[9, 2]
+                  BCOTsp$smallTshort <- COT[9, 4]
+                  BCOTsp$openPosition <- calcOpenPosition(BCOTsp)
+                  COTsp <<- rbind(COTsp, BCOTsp)
+
+
+                  COTspm <- get("COTspm")
+                  BCOTspm <- data.frame(date = COT[1, 1])
+                  BCOTspm$largeSlong <- COT[11, 2]
+                  BCOTspm$largeSshort <- COT[11, 4]
+                  BCOTspm$commHlong <- COT[12, 2]
+                  BCOTspm$commHshort <- COT[12, 4]
+                  BCOTspm$smallTlong <- COT[13, 2]
+                  BCOTspm$smallTshort <- COT[13, 4]
+                  BCOTspm$openPosition <- calcOpenPosition(BCOTspm)
+                  COTspm <<- rbind(COTspm, BCOTspm)
+
+                  print(paste("Values added with date: ", BCOTgold[nrow(BCOTgold), 1]))
+            }
+            else {
+                  print(paste(COTgold[nrow(COTgold), 1], "Values are already embedded"))
+            }
+      }
+      insertCOT(BCOTS)
 }
