@@ -1,5 +1,9 @@
 # barronsCOT v0.1.0.9000
 
+---
+
+[![Build Status](https://travis-ci.org/mariope/barronsCOT.png?branch=master)](https://travis-ci.org/mariope/barronsCOT) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mariope/barronsCOT?branch=master&svg=true)]
+
 Retrieve and analize Barron's Commitments of Trader data.
 
 ## Getting Started
