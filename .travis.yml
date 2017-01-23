@@ -1,3 +1,14 @@
 language: r
 cache: packages
 sudo: false
+warnings_are_errors: false
+
+#notifications
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+
+#before_script
+before_script:
+- R -q -e 'install.packages("http://cran.r-project.org/src/contrib/Archive/XML/XML_3.98-1.5.tar.gz", repos = NULL)'
