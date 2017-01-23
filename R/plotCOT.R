@@ -13,7 +13,7 @@
 #' -- Small Trader
 #'
 #' @author Mario Pisa
-#' @param
+#' @param cot A data.frame with COT
 #' @return plot
 #' @examples
 #' plotCOT(COTsp)
@@ -21,7 +21,7 @@
 #' plotCOT(COTgold)
 #' @seealso \url{http://www.barrons.com/public/page/9_0210-traderscommitments.html}
 #' @export
-plotCOT <- function(cot = COTsp) {
+plotCOT <- function(cot) {
       # ordenarOP <- function(cot) {
       #       coth <- data.frame()
       #       for (i in 1:nrow(cot)) {
