@@ -3,6 +3,12 @@ cache: packages
 sudo: false
 warnings_are_errors: false
 
+#env
+env:
+  global:
+  - _R_CHECK_FORCE_SUGGESTS_=false
+  - MAKEFLAGS="-j 2"
+
 #notifications
 notifications:
   email:
@@ -11,4 +17,4 @@ notifications:
 
 #before_script
 before_script:
-- R -q -e 'install.packages("http://cran.r-project.org/src/contrib/Archive/XML/XML_3.98-1.5.tar.gz", repos = NULL)'
+- R -q -e 'install.packages("http://cran.r-project.org/src/contrib/XML_3.98-1.5.tar.gz", repos = NULL)'
