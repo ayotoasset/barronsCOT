@@ -2,7 +2,7 @@
 
 ---
 
-[![Build Status](https://travis-ci.org/mariope/barronsCOT.png?branch=master)](https://travis-ci.org/mariope/barronsCOT) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mariope/barronsCOT?branch=master&svg=true)]
+[![Build Status](https://travis-ci.org/mariope/barronsCOT.png?branch=master)](https://travis-ci.org/mariope/barronsCOT)]
 
 Retrieve and analize Barron's Commitments of Trader data.
 

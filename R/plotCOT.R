@@ -22,22 +22,10 @@
 #' @seealso \url{http://www.barrons.com/public/page/9_0210-traderscommitments.html}
 #' @export
 plotCOT <- function(cot) {
-      # ordenarOP <- function(cot) {
-      #       coth <- data.frame()
-      #       for (i in 1:nrow(cot)) {
-      #             coth <- rbind(coth, c(cot$id[i], cot$LS[i]))
-      #             coth <- rbind(coth, c(cot$id[i], cot$CH[i]))
-      #             coth <- rbind(coth, c(cot$id[i], cot$ST[i]))
-      #       }
-      #       coth$ind <- seq.int(nrow(coth))
-      #       names(coth) <- c("id", "OP", "ind")
-      #       coth
-      # }
       cot$id <- seq.int(nrow(cot))
       cot$OPLS <- cot$largeSlong - cot$largeSshort
       cot$OPCH <- cot$commHlong - cot$commHshort
       cot$OPST <- cot$smallTlong - cot$smallTshort
-      # ordenarOP(cot)
       par(mfrow = c(4, 1))
       barplot(cot$openPosition, names.arg = cot$date, border = TRUE, las = 2)
       grid()
