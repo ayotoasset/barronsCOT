@@ -1,7 +1,13 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+# Header
 language: r
 cache: packages
 sudo: false
 warnings_are_errors: false
+
+install:
+    - Rscript -e 'install.packages("testthat")'
 
 #env
 env:
@@ -17,4 +23,20 @@ notifications:
 
 #before_script
 before_script:
-- R -q -e 'install.packages("http://cran.r-project.org/src/contrib/XML_3.98-1.5.tar.gz", repos = NULL)'
+
+#after_success
+after_success:
+
+# Custom parts:
+
+#r_github_packages
+r_github_packages:
+
+#r_packages
+r_packages:
+
+#services
+services:
+
+#before_install
+before_install:
