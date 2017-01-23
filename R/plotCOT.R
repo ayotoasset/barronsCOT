@@ -16,9 +16,9 @@
 #' @param
 #' @return plot
 #' @examples
-#' plotCOT(barronsCOTsp)
-#' plotCOT(barronsCOTspm)
-#' plotCOT(barronsCOTgold)
+#' plotCOT(COTsp)
+#' plotCOT(COTspm)
+#' plotCOT(COTgold)
 #' @seealso \url{http://www.barrons.com/public/page/9_0210-traderscommitments.html}
 #' @export
 plotCOT <- function(cot = COTsp) {
