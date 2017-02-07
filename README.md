@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mariope/barronsCOT.png?branch=master)](https://travis-ci.org/mariope/barronsCOT)
 
-Retrieve and analize Barron's Commitments of Trader data.
+Retrieve and analyze Barron's Commitments of Trader data.
 
 ## Getting Started
 
