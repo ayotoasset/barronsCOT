@@ -3,7 +3,7 @@
 #' \code{getBarronsCOT} returns a data.frame with the traders open position.
 #'
 #' @author Mario Pisa
-#' @param
+#' @param NULL
 #' @return data.frame with Barron's COT table
 #' @examples
 #' \dontrun{getBarronsCOT()}

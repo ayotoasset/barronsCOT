@@ -4,7 +4,10 @@
 \alias{plotCOT}
 \title{Plot Barron's COT data}
 \usage{
-plotCOT(cot = COTsp)
+plotCOT(cot)
+}
+\arguments{
+\item{cot}{A data.frame with COT}
 }
 \value{
 plot
@@ -23,9 +26,9 @@ The graphic show:
 -- Small Trader
 }
 \examples{
-plotCOT(barronsCOTsp)
-plotCOT(barronsCOTspm)
-plotCOT(barronsCOTgold)
+plotCOT(COTsp)
+plotCOT(COTspm)
+plotCOT(COTgold)
 }
 \author{
 Mario Pisa
