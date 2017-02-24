@@ -11,12 +11,12 @@
 #' @export
 getBarronsCOT <- function() {
       url <- "http://www.barrons.com/public/page/9_0210-traderscommitments.html"
-      barrons.table <- readHTMLTable(url, header = T, which = 1, stringsAsFactors = F)
+      barrons.table <- XML::readHTMLTable(url, header = T, which = 1, stringsAsFactors = F)
       #View(barrons.table)
       BCOTS <- barrons.table[c(6, 27:30, 35:42), ]
       #minisp <- barrons.table[39:42, ]
       for (i in 2:5) {
-            BCOTS[, i] <- type.convert(gsub("\\,", "", BCOTS[, i]), na.strings = "NA", as.is = FALSE, dec = ".",
+            BCOTS[, i] <- utils::type.convert(gsub("\\,", "", BCOTS[, i]), na.strings = "NA", as.is = FALSE, dec = ".",
                                      numerals = c("allow.loss", "warn.loss", "no.loss"))
       }
       insertCOT <- function(COT) {
@@ -35,7 +35,7 @@ getBarronsCOT <- function() {
                   BCOTgold$smallTshort <- COT[5, 4]
                   BCOTgold$openPosition <- calcOpenPosition(BCOTgold)
                   COTgold <- rbind(COTgold, BCOTgold)
-                  assign("COTgold", COTgold, .GlobalEnv)
+                  assign("COTgold", COTgold, envir = .GlobalEnv)
 
                   COTsp <- get("COTsp")
                   BCOTsp <- data.frame(date = COT[1, 1])
@@ -47,7 +47,7 @@ getBarronsCOT <- function() {
                   BCOTsp$smallTshort <- COT[9, 4]
                   BCOTsp$openPosition <- calcOpenPosition(BCOTsp)
                   COTsp <- rbind(COTsp, BCOTsp)
-                  assign("COTsp", COTsp, .GlobalEnv)
+                  assign("COTsp", COTsp, envir = .GlobalEnv)
 
                   COTspm <- get("COTspm")
                   BCOTspm <- data.frame(date = COT[1, 1])
@@ -59,7 +59,7 @@ getBarronsCOT <- function() {
                   BCOTspm$smallTshort <- COT[13, 4]
                   BCOTspm$openPosition <- calcOpenPosition(BCOTspm)
                   COTspm <- rbind(COTspm, BCOTspm)
-                  assign("COTspm", COTspm, .GlobalEnv)
+                  assign("COTspm", COTspm, envir = .GlobalEnv)
 
                   print(paste("Values added with date: ", BCOTgold[nrow(BCOTgold), 1]))
             }
