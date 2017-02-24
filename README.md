@@ -1,4 +1,4 @@
-# barronsCOT v0.1.0.9000
+# barronsCOT v0.1.0
 
 [![Build Status](https://travis-ci.org/mariope/barronsCOT.png?branch=master)](https://travis-ci.org/mariope/barronsCOT)
 
