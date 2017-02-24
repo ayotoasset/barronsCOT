@@ -3,7 +3,7 @@ Type: Package
 Date: 2016-10-22
 Title: Retrieve and analize Barron's Commitments of Trader
 Encoding: UTF-8
-Version: 0.1.0.9000
+Version: 0.1.0
 Authors@R: c(person("Mario Pisa", "Developer", role = c("aut", "cre"),
 		     email = "mario.pisa@gmail.com"))
 Author: Mario Pisa Peña [aut, cre]
