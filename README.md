@@ -9,7 +9,7 @@ Retrieve and analyze Barron's Commitments of Trader data.
 Barron's commitments of traders (COT) is a weekly data seed from Barron's web page
 [Barron's COT ](http://www.barrons.com/public/page/9_0210-traderscommitments.html)
 
-**barronsCOT** read the COT table from Barron's web page, store the data and analyze it.
+**barronsCOT** package reads the COT table from Barron's web page, store the data and plot graphics to analyze it.
 
 - Retrieve COT weekly data
 - Clean and store data
@@ -25,8 +25,13 @@ If you install from devtools you do not need to do anything else.
 
 #### Loading the library
 
-When you load the library, you obtain three data frmaes: **COTsp** for S&P 500 COT, 
-**COTspm** for S&P 500 (E-mini) COT and **COTgold** for Gold COT.
+When you load the library, you obtain three data frames: 
+
+- **COTsp** for S&P 500 COT
+
+- **COTspm** for S&P 500 (E-mini) COT
+
+- **COTgold** for Gold COT.
 
 ```
 library(barronsCOT)
@@ -34,7 +39,7 @@ library(barronsCOT)
 
 ## Running barronsCOT
 
-The function available are:
+The functions available are:
 
 ### getBarronsCOT()
 
@@ -44,7 +49,17 @@ This function hasn't parameters.
 ```
 > getBarronsCOT()
 ```
-The output is a text saying if the data frames have been updated.
+The output is a text saying if the data frames have been updated like this:
+
+```
+# [1] "Values added with date:  February 14, 2017"
+```
+
+or
+
+```
+# [1] "February 14, 2017 Values are already embedded"
+```
 
 ### plotCOT()
 
@@ -68,7 +83,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/mariope/barronsCOT/tags). 
+I use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/mariope/barronsCOT/tags). 
 
 ## Authors
 
