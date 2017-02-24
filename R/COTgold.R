@@ -13,5 +13,4 @@
 #'   \item{smallTshort}{Small Trader Short Position for Gold}
 #'   \item{openPosition}{Total Open Position for Gold}
 #' }
-#' @source
 "COTgold"

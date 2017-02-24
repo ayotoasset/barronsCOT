@@ -13,5 +13,4 @@
 #'   \item{smallTshort}{Small Trader Short Position for S&P500 (E-mini)}
 #'   \item{openPosition}{Total Open Position for S&P500 (E-mini)}
 #' }
-#' @source
 "COTspm"

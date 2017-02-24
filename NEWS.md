@@ -9,9 +9,8 @@
 
 ## TODO
 - retrieve complete table from Barron's
-- better analysis
 - improve graphics
 
 ## MISC
 
-- in this NEWS file, #n means the issue number on GitHub, e.g. #2 is https://github.com/mariope/barronsCOT/issues/2
+- in this NEWS file, #n means the issue number on GitHub, e.g. #1 is https://github.com/mariope/barronsCOT/issues/1

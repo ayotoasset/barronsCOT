@@ -15,8 +15,8 @@ Hash: c0d56cd15034f395874c870141870c25
 
 Package: Rcpp
 Source: CRAN
-Version: 0.12.8
-Hash: 436ad5c23fad4e22224c7ac2fc82b049
+Version: 0.12.9
+Hash: 7ab41cbe74918de8de87e435ef17e92d
 
 Package: XML
 Source: CRAN
@@ -53,12 +53,7 @@ Hash: 08eed0c80510af29bb15f840ccfe37ce
 Package: digest
 Source: CRAN
 Version: 0.6.10
-
-Package: ggplot2
-Source: CRAN
-Version: 2.2.0
-Hash: 78c14285e0c114542d051a09bd552472
-Requires: digest, gtable, lazyeval, plyr, reshape2, scales, tibble
+Hash: 87165608ca8aeb0958835c3c5b52b6b7
 
 Package: git2r
 Source: CRAN
@@ -126,13 +121,13 @@ Hash: 6ad605ba7b4b476d84be6632393f5765
 Package: plyr
 Source: CRAN
 Version: 1.8.4
-Hash: fee2f470d73a85f4db7e89d771427e57
+Hash: ce3897d2ea6dabdb2c0a217b25f5fe99
 Requires: Rcpp
 
 Package: reshape2
 Source: CRAN
-Version: 1.4.2
-Hash: fd2714b51cb380c30fec1687005587a2
+Version: 1.4.1
+Hash: efd85e9bd470ccee1935fabf0d05faff
 Requires: Rcpp, plyr, stringr
 
 Package: rstudioapi
@@ -143,7 +138,7 @@ Hash: fd256f8bfb9a64cc35f98b0decb1a79f
 Package: scales
 Source: CRAN
 Version: 0.4.1
-Hash: cf658953d600d4736b058df1558df481
+Hash: bc8d2233a63b068b0f60b18303d60c55
 Requires: RColorBrewer, Rcpp, dichromat, labeling, munsell, plyr
 
 Package: stringi
@@ -153,14 +148,14 @@ Hash: 1ad6b1cc11d982ac233bf2fa2f7c9684
 
 Package: stringr
 Source: CRAN
-Version: 1.1.0
-Hash: 4d21d0063b37a17ea18eaec6acd29bf3
+Version: 1.2.0
+Hash: 25a86d7f410513ebb7c0bc6a5e16bdc3
 Requires: magrittr, stringi
 
 Package: tibble
 Source: CRAN
-Version: 1.2
-Hash: ee28ae66deec042f19aff6fa10f5f8d5
+Version: 1.1
+Hash: 9f15b8fedd9f2ce4f596d60dd120d94a
 Requires: Rcpp, assertthat, lazyeval
 
 Package: whisker
