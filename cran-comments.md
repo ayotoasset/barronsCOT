@@ -9,6 +9,9 @@
 
 * This is a new release.
 
+This note is an assigment on globalenvironment. It is
+neccessary  for store the retrieve barrons data.
+
 ## Reverse dependencies
 
 This is a new release, so there are no reverse dependencies.
