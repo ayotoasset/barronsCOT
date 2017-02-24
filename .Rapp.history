@@ -1,0 +1,249 @@
+end(cmcsaldos)
+to.period(cmcsaldos$Saldo.EUR., period="days", k=1)
+to.period(cmcsaldos$Saldo.EUR., period="days")
+cmcdaily <- to.daily(cmcsaldos, drop.time=TRUE)
+cmcdaily
+tail(cmcsaldos)
+cmcdaily <- to.daily(cmcsaldos, drop.time=TRUE, OHLC=TRUE)
+cmcdaily <- to.daily(cmcsaldos$Saldo.EUR., drop.time=TRUE, OHLC=TRUE)
+cmcdaily <- to.daily(cmcsaldos[1], drop.time=TRUE, OHLC=TRUE)
+cmcdaily <- to.daily(cmcsaldos[, 1], drop.time=TRUE, OHLC=TRUE)
+cmcdaily <- to.daily(cmcsaldos, drop.time=TRUE, OHLC=TRUE)
+tail(cmcsaldos)
+cmcdaily
+cmcdaily <- to.daily(cmcsaldos, drop.time=TRUE, OHLC=FALSE)
+cmcdaily
+cmcdaily <- to.daily(cmcsaldos, name="Saldos.EUR.", drop.time=TRUE, OHLC=FALSE)
+cmcdaily <- to.weeks(cmcsaldos, name="Saldos.EUR.", drop.time=TRUE, OHLC=FALSE)
+cmcdaily <- to.week(cmcsaldos, name="Saldos.EUR.", drop.time=TRUE, OHLC=FALSE)
+cmcdaily <- to.weekly(cmcsaldos, name="Saldos.EUR.", drop.time=TRUE, OHLC=FALSE)
+cmcdaily <- to.months(cmcsaldos, name="Saldos.EUR.", drop.time=TRUE, OHLC=FALSE)
+cmcret <- Return.calculate(timeSeries(cmcsaldos$Saldo.EUR.), method="discrete")
+cmcret <- returns(cmc, na.rm=TRUE, method="discrete", trim=FALSE, percentage=TRUE)
+cmcret <- returns(cmc$Saldo.EUR., na.rm=TRUE, method="discrete", trim=FALSE, percentage=TRUE)
+last(mcmret)
+last(cmcret)
+first(cmcret)
+cmcret
+cmcret <- returns(cmc$Saldo.EUR., na.rm=TRUE, method="discrete", trim=FALSE, percentage=TRUE, ...)
+cmcret <- returns(cmc$Saldo.EUR., na.rm=TRUE, method="discrete", trim=TRUE, percentage=TRUE)
+cmcret
+cmcret <- returns(cmc$Saldo.EUR., na.rm=TRUE, method="continuous", trim=TRUE, percentage=TRUE)
+cmcret
+names(cmcret)
+returns(cmc)
+cmcret <- returns(cmc)
+cmcret <- returns(cmc$Saldo.EUR.)
+cmcret
+cmcret <- returns(cmcsaldos$Saldo.EUR.)
+cmcret
+cmcdaily <- to.daily(cmcsaldos)
+cmcdaily
+cmcdaily <- to.weekly(cmcsaldos)
+cmcdaily
+cmcdaily <- to.monthly(cmcsaldos)
+cmcdaily
+cmcdaily <- to.daily(cmcsaldos, drop.time=TRUE)
+cmcdaily
+cmcdaily <- to.daily(cmcsaldos, drop.time=TRUE, name="ccc")
+cmcdaily
+cmcdaily <- to.daily(cmcsaldos, drop.time=TRUE)
+cmcdaily
+cmcdaily <- dailyReturn(cmcsaldos, subset=NULL, type="arithmetic", leading=TRUE)
+cmcdaily
+cmcdaily <- dailyReturn(cmcsaldos$Saldo.EUR., subset=NULL, type="arithmetic", leading=TRUE)
+cmcdaily <- dailyReturn(cmcsaldos$Saldo.EUR., subset=NULL, type="arithmetic", leading=FALSE)
+cmcdaily <- dailyReturn(cmcsaldos$Saldo.EUR., subset=NULL, type="arithmetic", leading=TRUE)
+cmcdaily <- dailyReturn(cmcsaldos$Saldo.EUR., subset=NULL, type="arithmetic", leading=FALSE)
+cmcdaily
+ls()
+end(SPY)
+library(quantmod)
+end(SPY)
+end(VER.MC)
+search()
+end(cmc)
+cmcsaldos <- cmc[complete.cases(cmc$Saldo.EUR.)]
+tail(cmcsaldos)
+tail(cmc)
+cmcsaldos <- cmc[complete.cases(cmc$Saldo.EUR.)]
+tail(cmcsaldos)
+cmcsaldos <- cmc[complete.cases(cmc$Saldo.EUR.), ]
+tail(cmcsaldos)
+cmcsaldos <- cmcsaldos$Saldo.EUR.
+tail(cmcsaldos)
+head(cmcsaldos)
+cmcret <- Return.calculate(timeSeries(cmcsaldos), method="discrete")
+search()
+cmcsaldos
+barChart(SPY[2015])
+barChart(SPY[2015::])
+barChart(SPY)
+chartSeries(to.weekly(SPY), up.col="white", dn.col="blue")
+search()
+chartSeries(SPY)
+addMACD()
+chartSeries(to.weekly(SPY), up.col="white", dn.col="blue")
+addMACD()
+getSymbols("NDX")
+tail(NDX)
+setSymbolsLookup("DJI", name="DJI30")
+setSymbolLookup("DJI", name="DJI30")
+ls()
+saveSymbolLookup(file="mysymbols.rda")
+rm(NDX, SPY, VER.MC)
+ls()
+loadSymbolLookup(file="mysymbols.rda")
+ls()
+getSymbols(SPY)
+getSymbols("SPY")
+setSymbolLookup(SPY, name="SP5000Fut")
+saveSymbolLookup(file="mysymbols.rda")
+ls()
+rm(SPY)
+ls()
+loadSymbolLookup(file="mysymbols.rda")
+ls()
+getSymbols("GOLDAMGBD228NLBM", src="FRED")
+tail(GOLDAMGBD228NLBM)
+chartSeries(SPY['2015::'])
+chartSeries(GOLDAMGBD228NLBM['2015::'])
+ls(
+)
+load(".RData")
+source("advdec.R")
+ls()
+web
+ls()
+con
+source("advdec.R")
+ls()
+web.parse
+web.raw
+url
+ls()
+source("advdec.R")
+ls()
+web.raw
+web.parse
+con <- curl(url = 'https://ca.finance.yahoo.com/advances', open = "", handle = new_handle())
+library(curl)
+con <- curl(url = 'https://ca.finance.yahoo.com/advances', open = "", handle = new_handle())
+web <- readLines(con)
+web
+library(XML)
+url <- "https://ca.finance.yahoo.com/advances"
+tables = readHTMLTable(url, which = 1, stringsAsFactors = FALSE)
+tables
+ls()
+2
+tables = readHTMLTable(url, which = 3, stringsAsFactors = FALSE)
+tables = readHTMLTable(con, which = 1, stringsAsFactors = FALSE)
+web <- url(https://ca.finance.yahoo.com/advances)
+web = "https://ca.finance.yahoo.com/advances"
+web
+library(RCurl)
+web_url = getURL(web)
+tables = readHTMLTable(textConnection(web_url), which = 1, stringsAsFactors = FALSE)
+tables = readHTML(textConnection(web_url), which = 1, stringsAsFactors = FALSE)
+tables = read(textConnection(web_url), which = 1, stringsAsFactors = FALSE)
+tables = read.html(textConnection(web_url), which = 1, stringsAsFactors = FALSE)
+tables = read.table(textConnection(web_url), which = 1, stringsAsFactors = FALSE)
+tables = read.table(textConnection(web_url))
+readLines(web_url)
+url_web
+web_url
+source("advANCES.R")
+source("advances.R")
+w <- advances()
+source("advances.R")
+w <- advances()
+w
+w3 <- advances()
+w3
+source("advances.R")
+w3 <- advances()
+w3
+source("advances.R")
+w3 <- advances()
+w3
+source("advances.R")
+w3 <- advances()
+source("advances.R")
+w3 <- advances()
+source("advances.R")
+w3 <- advances()
+source("advances.R")
+w3 <- advances()
+source("advances.R")
+w3 <- advances()
+source("advances.R")
+w3 <- advances()
+ls()
+w
+web
+advances
+ls()
+web.parse
+web.raw
+con
+source("advances.R")
+w3 <- advances()
+w3
+viewer
+rstudio::viewer(w3)
+??viewer
+getOption("viewer")
+viewer
+RStudio::viewer(w3)
+source("advances.R")
+w3 <- advances()
+source("advances.R")
+w3 <- advances()
+source("advances.R")
+w3 <- advances()
+source("advances.R")
+w3 <- advances()
+source("advances.R")
+w3 <- advances()
+source("advances.R")
+w3 <- advances()
+source("advances.R")
+w3 <- advances()
+source("advances.R")
+w3 <- advances()
+source("advances.R")
+w3 <- advances()
+w3
+source("advances.R")
+w3
+w3 <- advances()
+source("advances.R")
+w3 <- advances()
+source("advances.R")
+w3 <- advances()
+w3
+source("advances.R")
+w3 <- advances()
+w3
+source("advances.R")
+w3 <- advances()
+w3
+source("advances.R")
+w3 <- advances()
+w3
+source("advances.R")
+w3 <- advances()
+w3
+source("advances.R")
+w3 <- advances()
+w3
+source("advances.R")
+w3 <- advances()
+w3
+source("advances.R")
+w3 <- advances()
+w3
+source("advances.R")
+w3 <- advances()
+w3

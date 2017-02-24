@@ -10,9 +10,10 @@ getBarronsCOT()
 data.frame with Barron's COT table
 }
 \description{
+Retrieve Barron's Commitment of Traders and store data
+}
+\details{
 \code{getBarronsCOT} returns a data.frame with the traders open position.
-\name{versionInfo}
-\description{Retrieve Barron's Commitment of Traders and store data.}
 }
 \examples{
 \dontrun{getBarronsCOT()}

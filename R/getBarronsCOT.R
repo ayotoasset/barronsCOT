@@ -1,8 +1,8 @@
 #' Retrieve Barron's COT weekly data
 #'
 #' \code{getBarronsCOT} returns a data.frame with the traders open position.
-#' \name{versionInfo}
-#' \description{Retrieve Barron's Commitment of Traders and store data.}
+#' @name getBarronsCOT
+#' @description Retrieve Barron's Commitment of Traders and store data
 #' @author Mario Pisa
 #' @return data.frame with Barron's COT table
 #' @examples
