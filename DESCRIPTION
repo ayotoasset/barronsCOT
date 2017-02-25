@@ -1,19 +1,17 @@
 Package: barronsCOT
 Type: Package
 Date: 2017-02-24
-Title: Retrieve and analize Barron's Commitments of Trader
+Title: Retrieve, Store and Plot Barron's Commitments of Trader
 Encoding: UTF-8
 Version: 0.1.0
-Authors@R: c(person("Mario Pisa", "Developer", role = c("aut", "cre"),
+Authors@R: c(person("Mario Pisa", role = c("aut", "cre"),
 		     email = "mario.pisa@gmail.com"))
-Author: Mario Pisa Peña [aut, cre]
-Maintainer: Mario Pisa <mario.pisa@gmail.com>
 Depends:
    R (>= 3.2.2)
 Imports:
    XML (>= 3.98)
 Suggests:
-Description: Get Barron's Commitments of Trader, store and analize it.
+Description: Get Barron's Commitments of Trader and Store for Historic Analysis.
 License: GPL-3 | file LICENSE
 LazyData: true
 URL:  https://github.com/mariope/barronsCOT
