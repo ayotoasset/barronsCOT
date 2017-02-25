@@ -35,7 +35,7 @@ getBarronsCOT <- function() {
                   BCOTgold$smallTshort <- COT[5, 4]
                   BCOTgold$openPosition <- calcOpenPosition(BCOTgold)
                   COTgold <- rbind(COTgold, BCOTgold)
-                  # assign("COTgold", COTgold, envir = .GlobalEnv)
+                  assign("COTgold", COTgold, envir = .GlobalEnv)
 
                   COTsp <- get("COTsp")
                   BCOTsp <- data.frame(date = COT[1, 1])
@@ -47,7 +47,7 @@ getBarronsCOT <- function() {
                   BCOTsp$smallTshort <- COT[9, 4]
                   BCOTsp$openPosition <- calcOpenPosition(BCOTsp)
                   COTsp <- rbind(COTsp, BCOTsp)
-                  # assign("COTsp", COTsp, envir = .GlobalEnv)
+                  assign("COTsp", COTsp, envir = .GlobalEnv)
 
                   COTspm <- get("COTspm")
                   BCOTspm <- data.frame(date = COT[1, 1])
@@ -59,7 +59,7 @@ getBarronsCOT <- function() {
                   BCOTspm$smallTshort <- COT[13, 4]
                   BCOTspm$openPosition <- calcOpenPosition(BCOTspm)
                   COTspm <- rbind(COTspm, BCOTspm)
-                  # assign("COTspm", COTspm, envir = .GlobalEnv)
+                  assign("COTspm", COTspm, envir = .GlobalEnv)
 
                   print(paste("Values added with date: ", BCOTgold[nrow(BCOTgold), 1]))
             }

@@ -7,9 +7,9 @@ Version: 0.1.0
 Authors@R: c(person("Mario Pisa", role = c("aut", "cre"),
 		     email = "mario.pisa@gmail.com"))
 Depends:
-   R (>= 3.2.2)
-Imports:
+   R (>= 3.2.2),
    XML (>= 3.98)
+Imports:
 Suggests:
 Description: Get Barron's Commitments of Trader and Store for Historic Analysis.
 License: GPL-3 | file LICENSE
